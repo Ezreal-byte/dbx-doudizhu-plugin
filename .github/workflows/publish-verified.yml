@@ -1,0 +1,113 @@
+name: Publish an already verified release
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: Successful Verify and release Windows plugin run that built the tag commit
+        required: true
+        type: string
+      tag:
+        description: Existing immutable release tag, for example v0.1.0
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: doudizhu-publish-${{ inputs.tag }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Publish existing verified bytes
+    runs-on: windows-2022
+    timeout-minutes: 15
+    steps:
+      - name: Bind successful source run to immutable tag commit
+        id: source
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          RELEASE_TAG: ${{ inputs.tag }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          if ($env:SOURCE_RUN_ID -notmatch '^[0-9]+$') { throw 'Invalid source run id' }
+          if ($env:RELEASE_TAG -notmatch '^v[0-9]+\.[0-9]+\.[0-9]+(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$') { throw 'Invalid release tag' }
+          $repository = $env:GITHUB_REPOSITORY
+          $runJSON = & gh api "repos/$repository/actions/runs/$($env:SOURCE_RUN_ID)"
+          if ($LASTEXITCODE -ne 0) { throw 'Cannot read source workflow run in this repository' }
+          $run = $runJSON | ConvertFrom-Json
+          if ($run.repository.full_name -ne $repository) { throw 'Source run belongs to another repository' }
+          if ($run.status -ne 'completed' -or $run.conclusion -ne 'success') { throw 'Source workflow must have completed successfully' }
+          if ($run.path -ne '.github/workflows/release.yml') { throw 'Source run is not the verified package workflow' }
+          $tagJSON = & gh api "repos/$repository/git/ref/tags/$($env:RELEASE_TAG)"
+          if ($LASTEXITCODE -ne 0) { throw 'Release tag must already exist' }
+          $tagObject = ($tagJSON | ConvertFrom-Json).object
+          for ($depth = 0; $tagObject.type -eq 'tag' -and $depth -lt 10; $depth++) {
+            $annotatedJSON = & gh api "repos/$repository/git/tags/$($tagObject.sha)"
+            if ($LASTEXITCODE -ne 0) { throw 'Cannot resolve annotated tag' }
+            $tagObject = ($annotatedJSON | ConvertFrom-Json).object
+          }
+          if ($tagObject.type -ne 'commit') { throw 'Tag does not resolve to a commit' }
+          if ($run.head_sha -ne $tagObject.sha) { throw 'Source run commit differs from release tag commit' }
+          $artifactName = "doudizhu-windows-$($run.head_sha)"
+          $artifactJSON = & gh api "repos/$repository/actions/runs/$($env:SOURCE_RUN_ID)/artifacts?name=$artifactName"
+          if ($LASTEXITCODE -ne 0) { throw 'Cannot inspect verified artifacts' }
+          $artifacts = @(($artifactJSON | ConvertFrom-Json).artifacts | Where-Object name -EQ $artifactName)
+          if ($artifacts.Count -ne 1 -or $artifacts[0].expired) { throw 'Expected exactly one unexpired verified package artifact' }
+          "artifact_name=$artifactName" | Out-File -LiteralPath $env:GITHUB_OUTPUT -Encoding utf8 -Append
+          "head_sha=$($run.head_sha)" | Out-File -LiteralPath $env:GITHUB_OUTPUT -Encoding utf8 -Append
+          Write-Output "Verified source run $($env:SOURCE_RUN_ID) and tag $($env:RELEASE_TAG) at $($run.head_sha)"
+      - uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.source_run_id }}
+          name: ${{ steps.source.outputs.artifact_name }}
+          path: dist
+      - name: Verify inventory and publish without rebuilding
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.tag }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $inventory = Get-Content -LiteralPath dist/release-assets.json -Encoding utf8 -Raw | ConvertFrom-Json
+          if ($inventory.repository -ne $env:GITHUB_REPOSITORY) { throw 'Release repository mismatch' }
+          if ($inventory.tag -ne $env:RELEASE_TAG -or "v$($inventory.version)" -ne $env:RELEASE_TAG) { throw 'Release tag/version mismatch' }
+          if (@($inventory.assets).Count -eq 0) { throw 'Release inventory is empty' }
+          if (@($inventory.assets.name | Sort-Object -Unique).Count -ne @($inventory.assets).Count) { throw 'Duplicate release asset filename' }
+          foreach ($asset in $inventory.assets) {
+            if ($asset.name -notmatch '^[A-Za-z0-9_.-]+$' -or $asset.name -in @('.', '..')) { throw 'Invalid asset filename' }
+            if ($asset.sha256 -notmatch '^[a-f0-9]{64}$' -or $asset.size -lt 1) { throw 'Invalid asset integrity metadata' }
+            $assetPath = Join-Path 'dist' $asset.name
+            if ((Get-Item -LiteralPath $assetPath).Length -ne $asset.size) { throw "Asset size mismatch: $($asset.name)" }
+            if ((Get-FileHash -LiteralPath $assetPath -Algorithm SHA256).Hash.ToLowerInvariant() -ne $asset.sha256) { throw "Asset checksum mismatch: $($asset.name)" }
+          }
+          $releaseJSON = & gh release view $inventory.tag --repo $env:GITHUB_REPOSITORY --json isDraft,assets 2>$null
+          if ($LASTEXITCODE -eq 0) {
+            $release = $releaseJSON | ConvertFrom-Json
+          } else {
+            & gh release create $inventory.tag --repo $env:GITHUB_REPOSITORY --verify-tag --draft --title "田园斗地主 $($inventory.version)" --notes-file dist/release-notes.md
+            if ($LASTEXITCODE -ne 0) { throw 'Could not create draft release' }
+            $release = [pscustomobject]@{ isDraft = $true; assets = @() }
+          }
+          $checkDirectory = Join-Path $env:RUNNER_TEMP 'existing-release-assets'
+          [IO.Directory]::CreateDirectory($checkDirectory) | Out-Null
+          foreach ($asset in $inventory.assets) {
+            if (@($release.assets | Where-Object name -EQ $asset.name).Count -gt 0) {
+              & gh release download $inventory.tag --repo $env:GITHUB_REPOSITORY --pattern $asset.name --dir $checkDirectory
+              if ($LASTEXITCODE -ne 0) { throw "Cannot verify existing release asset: $($asset.name)" }
+              $existingHash = (Get-FileHash -LiteralPath (Join-Path $checkDirectory $asset.name) -Algorithm SHA256).Hash.ToLowerInvariant()
+              if ($existingHash -ne $asset.sha256) { throw "Refusing to replace published bytes: $($asset.name). Publish a new version instead." }
+            } else {
+              & gh release upload $inventory.tag (Join-Path 'dist' $asset.name) --repo $env:GITHUB_REPOSITORY
+              if ($LASTEXITCODE -ne 0) { throw "Could not upload release asset: $($asset.name)" }
+            }
+          }
+          & gh release edit $inventory.tag --repo $env:GITHUB_REPOSITORY --draft=false --latest
+          if ($LASTEXITCODE -ne 0) { throw 'Could not publish verified release' }

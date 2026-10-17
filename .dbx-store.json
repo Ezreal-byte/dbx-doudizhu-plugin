@@ -7,7 +7,7 @@
   "source": "https://github.com/Ezreal-byte/dbx-doudizhu-plugin/tree/v0.1.0",
   "homepage": "https://github.com/Ezreal-byte/dbx-doudizhu-plugin",
   "license": "Apache-2.0",
-  "releaseNotes": "Initial public release: local LAN three-player rooms, optional passwords, animated characters, offline voices and social effects. Includes no hosted Internet lobby, matchmaking, online account service, top-ups, payments, purchases, cash-out or real-money stakes. Room beans are non-transferable score counters without monetary value. Windows x64 unsigned review candidate; DBX Store signs approved packages.",
+  "releaseNotes": "Initial public release: local LAN three-player rooms, optional passwords, animated characters, offline voices and social effects. Includes no hosted Internet lobby, matchmaking, online account service, top-ups, payments, purchases, cash-out or real-money stakes. Room beans are non-transferable score counters without monetary value. Windows x64 and macOS 15.4+ Apple Silicon/Intel unsigned review candidates; DBX Store signs approved packages.",
   "localizations": {
     "zh-CN": {
       "name": "田园斗地主",

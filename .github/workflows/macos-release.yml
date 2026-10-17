@@ -1,0 +1,139 @@
+name: Verify and publish macOS packages for an existing tag
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing release tag (never moved by this workflow)
+        required: true
+        default: v0.1.0
+        type: string
+      source_sha:
+        description: Exact application source commit behind the tag
+        required: true
+        default: 384e61221e441bc6543f6eb44a192b2db672a205
+        type: string
+      publish:
+        description: Add verified Mac packages and refresh release metadata
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: doudizhu-macos-${{ inputs.tag }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    name: Test and package ${{ matrix.target }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - target: darwin-arm64
+            runner: macos-15
+          - target: darwin-x64
+            runner: macos-15-intel
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: source
+        shell: bash
+    env:
+      CGO_ENABLED: '1'
+      DBX_PLUGIN_TARGET: ${{ matrix.target }}
+      RELEASE_TAG: ${{ inputs.tag }}
+      SOURCE_SHA: ${{ inputs.source_sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: tooling
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.tag }}
+          path: source
+      - name: Bind build to immutable application source
+        run: |
+          test "$(git rev-parse HEAD)" = "$SOURCE_SHA"
+          node -e 'const a=require("node:assert/strict"); a.match(process.env.SOURCE_SHA,/^[a-f0-9]{40}$/); a.equal(process.env.RELEASE_TAG,"v"+require("./manifest.json").version)'
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.34.7
+          run_install: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: pnpm
+          cache-dependency-path: source/pnpm-lock.yaml
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.26.x'
+          cache-dependency-path: source/backend/go.sum
+      - name: Install locked dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Frontend unit tests
+        run: pnpm test
+      - name: Go race tests and static analysis
+        run: |
+          go -C backend test -race ./...
+          go -C backend vet ./...
+          go -C backend/third_party/dbx-plugin-sdk test ./...
+      - name: Build original tag with its locked native DBX CLI
+        run: |
+          node scripts/licenses.mjs
+          node scripts/build-ui.mjs
+          node node_modules/@dbx-app/plugin-cli/bin/dbx-plugin.js package . --target "$DBX_PLUGIN_TARGET" --output-dir dist
+          git diff --exit-code -- backend src public manifest.json package.json pnpm-lock.yaml
+      - name: Verify package and run three native client rounds
+        shell: pwsh
+        run: ../tooling/scripts/verify-package.ps1 -ProjectRoot . -Target $env:DBX_PLUGIN_TARGET
+      - name: Decode bundled audio in native system WebKit
+        run: |
+          voice=$(find assets/audio/voices -name '*.ogg' -type f -print -quit)
+          swift ../tooling/scripts/verify-macos-webkit.swift assets/audio/garden-table.ogg "$voice" > test-results/macos-webkit.json
+          cat test-results/macos-webkit.json
+      - name: Record immutable source, package and validation provenance
+        run: node ../tooling/scripts/macos-build-provenance.mjs .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: doudizhu-${{ matrix.target }}-${{ github.run_id }}
+          compression-level: 0
+          if-no-files-found: error
+          path: |
+            source/dist/*.dbxp
+            source/dist/*.artifact.json
+            source/dist/build-provenance-*.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verification-${{ matrix.target }}-${{ github.run_id }}
+          if-no-files-found: ignore
+          path: source/test-results/*.json
+
+  publish:
+    name: Publish verified macOS packages and refresh 0.1.0 metadata
+    needs: verify
+    if: inputs.publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: doudizhu-darwin-*-${{ github.run_id }}
+          merge-multiple: true
+          path: dist/macos-release
+      - name: Verify both native builds and update existing release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.tag }}
+          SOURCE_SHA: ${{ inputs.source_sha }}
+        run: node scripts/publish-macos-release.mjs dist/macos-release

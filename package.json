@@ -1,0 +1,34 @@
+{
+  "name": "dbx-doudizhu-plugin",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "repository": {"type": "git", "url": "https://github.com/Ezreal-byte/dbx-doudizhu-plugin.git"},
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vue-tsc --noEmit && vite build",
+    "build:watch": "vite build --watch",
+    "test": "vitest run",
+    "package": "node scripts/package.mjs",
+    "test:integration": "node scripts/integration.mjs",
+    "test:browser": "node scripts/browser-acceptance.mjs",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "@fontsource/noto-sans-sc": "^5.3.1",
+    "pixi.js": "8.22.0",
+    "vue": "3.5.35"
+  },
+  "devDependencies": {
+    "@dbx-app/plugin-cli": "0.1.9",
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^22.0.0",
+    "@vitejs/plugin-vue": "6.0.7",
+    "typescript": "~5.9.3",
+    "vite": "7.3.1",
+    "vitest": "3.2.4",
+    "vue-tsc": "3.3.3"
+  },
+  "packageManager": "pnpm@10.34.7"
+}

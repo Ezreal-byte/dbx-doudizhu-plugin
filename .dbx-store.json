@@ -1,0 +1,17 @@
+{
+  "name": "Garden Dou Dizhu",
+  "description": "A three-player Dou Dizhu mini-game for your local LAN, with public/password rooms and animated characters. No hosted online service, online accounts, top-ups, payments or cash-out.",
+  "icon": "https://raw.githubusercontent.com/Ezreal-byte/dbx-doudizhu-plugin/v0.1.0/assets/plugin.svg",
+  "tags": ["game", "lan", "doudizhu", "offline"],
+  "permissions": ["host.events"],
+  "source": "https://github.com/Ezreal-byte/dbx-doudizhu-plugin/tree/v0.1.0",
+  "homepage": "https://github.com/Ezreal-byte/dbx-doudizhu-plugin",
+  "license": "Apache-2.0",
+  "releaseNotes": "Initial public release: local LAN three-player rooms, optional passwords, animated characters, offline voices and social effects. Includes no hosted Internet lobby, matchmaking, online account service, top-ups, payments, purchases, cash-out or real-money stakes. Room beans are non-transferable score counters without monetary value. Windows x64 unsigned review candidate; DBX Store signs approved packages.",
+  "localizations": {
+    "zh-CN": {
+      "name": "田园斗地主",
+      "description": "本地局域网三人联机斗地主小游戏，支持公开房、密码房和动态角色互动；无公网在线服务、账号、充值、支付或提现。"
+    }
+  }
+}

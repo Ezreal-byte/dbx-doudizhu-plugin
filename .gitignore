@@ -1,0 +1,16 @@
+node_modules/
+ui/
+dist/
+.dbx-dev/
+backend/bin/
+*.exe
+*.log
+test-results/
+.cache/
+identity.json
+custom-music.json
+.env
+.env.*
+.venv/
+__pycache__/
+*.pyc

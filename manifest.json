@@ -1,0 +1,18 @@
+{
+  "manifest_version": 1,
+  "id": "io.dbx.doudizhu",
+  "name": "田园斗地主",
+  "version": "0.1.0",
+  "publisher": "ezreal-byte",
+  "description": "本地局域网三人联机斗地主小游戏，支持公开房、密码房和动态角色互动；无公网在线服务、账号、充值、支付或提现。",
+  "icon": "assets/plugin.svg",
+  "permissions": ["host.events"],
+  "engines": {"dbx": ">=0.6.44", "host_api": "^1.0"},
+  "entrypoints": {
+    "backend": {"executable": "bin/dbx-doudizhu.exe"},
+    "ui": {"root": "ui", "entry": "ui/index.html"}
+  },
+  "contributions": [
+    {"type": "workbench", "id": "io.dbx.doudizhu.main", "label": "田园斗地主", "icon": "assets/plugin.svg"}
+  ]
+}

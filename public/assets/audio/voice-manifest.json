@@ -1,0 +1,2461 @@
+{
+  "format": 1,
+  "model": "hexgrad/Kokoro-82M-v1.1-zh",
+  "revision": "01e7505bd6a7a2ac4975463114c3a7650a9f7218",
+  "license": "Apache-2.0",
+  "sampleRate": 24000,
+  "roles": [
+    {
+      "id": 0,
+      "name": "阿禾",
+      "voice": "zm_009",
+      "speed": 1.08
+    },
+    {
+      "id": 1,
+      "name": "小满",
+      "voice": "zf_001",
+      "speed": 1.12
+    },
+    {
+      "id": 2,
+      "name": "福伯",
+      "voice": "zm_010",
+      "speed": 0.98
+    },
+    {
+      "id": 3,
+      "name": "青竹",
+      "voice": "zf_017",
+      "speed": 1.03
+    },
+    {
+      "id": 4,
+      "name": "长安",
+      "voice": "zm_014",
+      "speed": 1.13
+    }
+  ],
+  "cues": {
+    "0": {
+      "bid-0": [
+        {
+          "file": "assets/audio/voices/0/bid-0-0.ogg",
+          "text": "这回不叫。",
+          "duration": 1.088
+        },
+        {
+          "file": "assets/audio/voices/0/bid-0-1.ogg",
+          "text": "先让你们来。",
+          "duration": 1.181
+        }
+      ],
+      "bid-1": [
+        {
+          "file": "assets/audio/voices/0/bid-1-0.ogg",
+          "text": "一分！",
+          "duration": 0.598
+        }
+      ],
+      "bid-2": [
+        {
+          "file": "assets/audio/voices/0/bid-2-0.ogg",
+          "text": "两分！",
+          "duration": 0.647
+        }
+      ],
+      "bid-3": [
+        {
+          "file": "assets/audio/voices/0/bid-3-0.ogg",
+          "text": "三分！这把我来！",
+          "duration": 1.414
+        },
+        {
+          "file": "assets/audio/voices/0/bid-3-1.ogg",
+          "text": "三分，开个好局！",
+          "duration": 1.476
+        }
+      ],
+      "double-0": [
+        {
+          "file": "assets/audio/voices/0/double-0-0.ogg",
+          "text": "稳一点，不加倍。",
+          "duration": 1.482
+        },
+        {
+          "file": "assets/audio/voices/0/double-0-1.ogg",
+          "text": "这把不加倍。",
+          "duration": 1.243
+        }
+      ],
+      "double-1": [
+        {
+          "file": "assets/audio/voices/0/double-1-0.ogg",
+          "text": "加倍！",
+          "duration": 0.627
+        },
+        {
+          "file": "assets/audio/voices/0/double-1-1.ogg",
+          "text": "好牌，加倍！",
+          "duration": 1.221
+        }
+      ],
+      "pass": [
+        {
+          "file": "assets/audio/voices/0/pass-0.ogg",
+          "text": "这手不要。",
+          "duration": 1.063
+        },
+        {
+          "file": "assets/audio/voices/0/pass-1.ogg",
+          "text": "过，看看你的！",
+          "duration": 1.322
+        },
+        {
+          "file": "assets/audio/voices/0/pass-2.ogg",
+          "text": "你先出，我等一等。",
+          "duration": 1.703
+        }
+      ],
+      "play": [
+        {
+          "file": "assets/audio/voices/0/play-0.ogg",
+          "text": "看我的！",
+          "duration": 0.76
+        },
+        {
+          "file": "assets/audio/voices/0/play-1.ogg",
+          "text": "接好了！",
+          "duration": 0.852
+        }
+      ],
+      "triple": [
+        {
+          "file": "assets/audio/voices/0/triple-0.ogg",
+          "text": "三张！",
+          "duration": 0.659
+        }
+      ],
+      "triple-single": [
+        {
+          "file": "assets/audio/voices/0/triple-single-0.ogg",
+          "text": "三带一！",
+          "duration": 0.9
+        }
+      ],
+      "triple-pair": [
+        {
+          "file": "assets/audio/voices/0/triple-pair-0.ogg",
+          "text": "三带二！",
+          "duration": 0.901
+        }
+      ],
+      "straight": [
+        {
+          "file": "assets/audio/voices/0/straight-0.ogg",
+          "text": "顺子，一路顺风！",
+          "duration": 1.564
+        },
+        {
+          "file": "assets/audio/voices/0/straight-1.ogg",
+          "text": "顺子！",
+          "duration": 0.672
+        }
+      ],
+      "pair-straight": [
+        {
+          "file": "assets/audio/voices/0/pair-straight-0.ogg",
+          "text": "连对！",
+          "duration": 0.61
+        }
+      ],
+      "airplane": [
+        {
+          "file": "assets/audio/voices/0/airplane-0.ogg",
+          "text": "飞机，起飞！",
+          "duration": 1.164
+        }
+      ],
+      "airplane-single": [
+        {
+          "file": "assets/audio/voices/0/airplane-single-0.ogg",
+          "text": "飞机带翅膀！",
+          "duration": 1.355
+        }
+      ],
+      "airplane-pair": [
+        {
+          "file": "assets/audio/voices/0/airplane-pair-0.ogg",
+          "text": "飞机带对子！",
+          "duration": 1.286
+        }
+      ],
+      "four-two-single": [
+        {
+          "file": "assets/audio/voices/0/four-two-single-0.ogg",
+          "text": "四带二！",
+          "duration": 0.898
+        }
+      ],
+      "four-two-pair": [
+        {
+          "file": "assets/audio/voices/0/four-two-pair-0.ogg",
+          "text": "四带两对！",
+          "duration": 1.117
+        }
+      ],
+      "bomb": [
+        {
+          "file": "assets/audio/voices/0/bomb-0.ogg",
+          "text": "炸弹！接得住吗？",
+          "duration": 1.399
+        },
+        {
+          "file": "assets/audio/voices/0/bomb-1.ogg",
+          "text": "炸弹，漂亮！",
+          "duration": 1.173
+        }
+      ],
+      "rocket": [
+        {
+          "file": "assets/audio/voices/0/rocket-0.ogg",
+          "text": "王炸！好戏来了！",
+          "duration": 1.463
+        }
+      ],
+      "win": [
+        {
+          "file": "assets/audio/voices/0/win-0.ogg",
+          "text": "赢啦！这把配合得漂亮！",
+          "duration": 1.911
+        },
+        {
+          "file": "assets/audio/voices/0/win-1.ogg",
+          "text": "好牌，好心情！再来一局！",
+          "duration": 2.233
+        }
+      ],
+      "lose": [
+        {
+          "file": "assets/audio/voices/0/lose-0.ogg",
+          "text": "哎呀，差一点！下局再来！",
+          "duration": 2.061
+        },
+        {
+          "file": "assets/audio/voices/0/lose-1.ogg",
+          "text": "这局你厉害，再切磋一把！",
+          "duration": 2.52
+        }
+      ],
+      "tea": [
+        {
+          "file": "assets/audio/voices/0/tea-0.ogg",
+          "text": "来，请你喝杯茶。",
+          "duration": 1.627
+        }
+      ],
+      "flower": [
+        {
+          "file": "assets/audio/voices/0/flower-0.ogg",
+          "text": "送你一朵花，好运到你家！",
+          "duration": 2.362
+        }
+      ],
+      "tomato": [
+        {
+          "file": "assets/audio/voices/0/tomato-0.ogg",
+          "text": "嘿，接个番茄！",
+          "duration": 1.47
+        }
+      ],
+      "egg": [
+        {
+          "file": "assets/audio/voices/0/egg-0.ogg",
+          "text": "小心，鸡蛋来啦！",
+          "duration": 1.507
+        }
+      ],
+      "like": [
+        {
+          "file": "assets/audio/voices/0/like-0.ogg",
+          "text": "这手牌，打得漂亮！",
+          "duration": 1.613
+        }
+      ],
+      "phrase-hello": [
+        {
+          "file": "assets/audio/voices/0/phrase-hello-0.ogg",
+          "text": "各位牌友，晚上好！",
+          "duration": 1.74
+        }
+      ],
+      "phrase-hurry": [
+        {
+          "file": "assets/audio/voices/0/phrase-hurry-0.ogg",
+          "text": "快点吧，花儿都谢了！",
+          "duration": 1.755
+        }
+      ],
+      "phrase-good": [
+        {
+          "file": "assets/audio/voices/0/phrase-good-0.ogg",
+          "text": "这牌打得真漂亮！",
+          "duration": 1.639
+        }
+      ],
+      "phrase-team": [
+        {
+          "file": "assets/audio/voices/0/phrase-team-0.ogg",
+          "text": "和你合作真是太愉快了！",
+          "duration": 2.233
+        }
+      ],
+      "phrase-again": [
+        {
+          "file": "assets/audio/voices/0/phrase-again-0.ogg",
+          "text": "不要走，决战到天亮！",
+          "duration": 1.871
+        }
+      ],
+      "preview": [
+        {
+          "file": "assets/audio/voices/0/preview-0.ogg",
+          "text": "三分！这把我来！嗯，这手不要。好牌，打得漂亮！",
+          "duration": 3.79
+        }
+      ],
+      "single-3": [
+        {
+          "file": "assets/audio/voices/0/single-3-0.ogg",
+          "text": "三！",
+          "duration": 0.56
+        }
+      ],
+      "pair-3": [
+        {
+          "file": "assets/audio/voices/0/pair-3-0.ogg",
+          "text": "对三！",
+          "duration": 0.593
+        }
+      ],
+      "single-4": [
+        {
+          "file": "assets/audio/voices/0/single-4-0.ogg",
+          "text": "四！",
+          "duration": 0.443
+        }
+      ],
+      "pair-4": [
+        {
+          "file": "assets/audio/voices/0/pair-4-0.ogg",
+          "text": "对四！",
+          "duration": 0.577
+        }
+      ],
+      "single-5": [
+        {
+          "file": "assets/audio/voices/0/single-5-0.ogg",
+          "text": "五！",
+          "duration": 0.463
+        }
+      ],
+      "pair-5": [
+        {
+          "file": "assets/audio/voices/0/pair-5-0.ogg",
+          "text": "对五！",
+          "duration": 0.625
+        }
+      ],
+      "single-6": [
+        {
+          "file": "assets/audio/voices/0/single-6-0.ogg",
+          "text": "六！",
+          "duration": 0.595
+        }
+      ],
+      "pair-6": [
+        {
+          "file": "assets/audio/voices/0/pair-6-0.ogg",
+          "text": "对六！",
+          "duration": 0.604
+        }
+      ],
+      "single-7": [
+        {
+          "file": "assets/audio/voices/0/single-7-0.ogg",
+          "text": "七！",
+          "duration": 0.556
+        }
+      ],
+      "pair-7": [
+        {
+          "file": "assets/audio/voices/0/pair-7-0.ogg",
+          "text": "对七！",
+          "duration": 0.635
+        }
+      ],
+      "single-8": [
+        {
+          "file": "assets/audio/voices/0/single-8-0.ogg",
+          "text": "八！",
+          "duration": 0.496
+        }
+      ],
+      "pair-8": [
+        {
+          "file": "assets/audio/voices/0/pair-8-0.ogg",
+          "text": "对八！",
+          "duration": 0.545
+        }
+      ],
+      "single-9": [
+        {
+          "file": "assets/audio/voices/0/single-9-0.ogg",
+          "text": "九！",
+          "duration": 0.559
+        }
+      ],
+      "pair-9": [
+        {
+          "file": "assets/audio/voices/0/pair-9-0.ogg",
+          "text": "对九！",
+          "duration": 0.591
+        }
+      ],
+      "single-10": [
+        {
+          "file": "assets/audio/voices/0/single-10-0.ogg",
+          "text": "十！",
+          "duration": 0.487
+        }
+      ],
+      "pair-10": [
+        {
+          "file": "assets/audio/voices/0/pair-10-0.ogg",
+          "text": "对十！",
+          "duration": 0.605
+        }
+      ],
+      "single-11": [
+        {
+          "file": "assets/audio/voices/0/single-11-0.ogg",
+          "text": "勾！",
+          "duration": 0.508
+        }
+      ],
+      "pair-11": [
+        {
+          "file": "assets/audio/voices/0/pair-11-0.ogg",
+          "text": "对勾！",
+          "duration": 0.604
+        }
+      ],
+      "single-12": [
+        {
+          "file": "assets/audio/voices/0/single-12-0.ogg",
+          "text": "圈！",
+          "duration": 0.472
+        }
+      ],
+      "pair-12": [
+        {
+          "file": "assets/audio/voices/0/pair-12-0.ogg",
+          "text": "对圈！",
+          "duration": 0.628
+        }
+      ],
+      "single-13": [
+        {
+          "file": "assets/audio/voices/0/single-13-0.ogg",
+          "text": "凯！",
+          "duration": 0.454
+        }
+      ],
+      "pair-13": [
+        {
+          "file": "assets/audio/voices/0/pair-13-0.ogg",
+          "text": "对凯！",
+          "duration": 0.624
+        }
+      ],
+      "single-14": [
+        {
+          "file": "assets/audio/voices/0/single-14-0.ogg",
+          "text": "尖！",
+          "duration": 0.532
+        }
+      ],
+      "pair-14": [
+        {
+          "file": "assets/audio/voices/0/pair-14-0.ogg",
+          "text": "对尖！",
+          "duration": 0.59
+        }
+      ],
+      "single-15": [
+        {
+          "file": "assets/audio/voices/0/single-15-0.ogg",
+          "text": "二！",
+          "duration": 0.532
+        }
+      ],
+      "pair-15": [
+        {
+          "file": "assets/audio/voices/0/pair-15-0.ogg",
+          "text": "对二！",
+          "duration": 0.576
+        }
+      ],
+      "single-16": [
+        {
+          "file": "assets/audio/voices/0/single-16-0.ogg",
+          "text": "小王！",
+          "duration": 0.652
+        }
+      ],
+      "single-17": [
+        {
+          "file": "assets/audio/voices/0/single-17-0.ogg",
+          "text": "大王！",
+          "duration": 0.583
+        }
+      ]
+    },
+    "1": {
+      "bid-0": [
+        {
+          "file": "assets/audio/voices/1/bid-0-0.ogg",
+          "text": "这回不叫。",
+          "duration": 1.062
+        },
+        {
+          "file": "assets/audio/voices/1/bid-0-1.ogg",
+          "text": "先让你们来。",
+          "duration": 1.149
+        }
+      ],
+      "bid-1": [
+        {
+          "file": "assets/audio/voices/1/bid-1-0.ogg",
+          "text": "一分！",
+          "duration": 0.611
+        }
+      ],
+      "bid-2": [
+        {
+          "file": "assets/audio/voices/1/bid-2-0.ogg",
+          "text": "两分！",
+          "duration": 0.635
+        }
+      ],
+      "bid-3": [
+        {
+          "file": "assets/audio/voices/1/bid-3-0.ogg",
+          "text": "三分！这把我来！",
+          "duration": 1.375
+        },
+        {
+          "file": "assets/audio/voices/1/bid-3-1.ogg",
+          "text": "三分，开个好局！",
+          "duration": 1.442
+        }
+      ],
+      "double-0": [
+        {
+          "file": "assets/audio/voices/1/double-0-0.ogg",
+          "text": "稳一点，不加倍。",
+          "duration": 1.404
+        },
+        {
+          "file": "assets/audio/voices/1/double-0-1.ogg",
+          "text": "这把不加倍。",
+          "duration": 1.234
+        }
+      ],
+      "double-1": [
+        {
+          "file": "assets/audio/voices/1/double-1-0.ogg",
+          "text": "加倍！",
+          "duration": 0.639
+        },
+        {
+          "file": "assets/audio/voices/1/double-1-1.ogg",
+          "text": "好牌，加倍！",
+          "duration": 1.143
+        }
+      ],
+      "pass": [
+        {
+          "file": "assets/audio/voices/1/pass-0.ogg",
+          "text": "这手不要。",
+          "duration": 1.014
+        },
+        {
+          "file": "assets/audio/voices/1/pass-1.ogg",
+          "text": "过，看看你的！",
+          "duration": 1.248
+        },
+        {
+          "file": "assets/audio/voices/1/pass-2.ogg",
+          "text": "你先出，我等一等。",
+          "duration": 1.588
+        }
+      ],
+      "play": [
+        {
+          "file": "assets/audio/voices/1/play-0.ogg",
+          "text": "看我的！",
+          "duration": 0.763
+        },
+        {
+          "file": "assets/audio/voices/1/play-1.ogg",
+          "text": "接好了！",
+          "duration": 0.831
+        }
+      ],
+      "triple": [
+        {
+          "file": "assets/audio/voices/1/triple-0.ogg",
+          "text": "三张！",
+          "duration": 0.655
+        }
+      ],
+      "triple-single": [
+        {
+          "file": "assets/audio/voices/1/triple-single-0.ogg",
+          "text": "三带一！",
+          "duration": 0.872
+        }
+      ],
+      "triple-pair": [
+        {
+          "file": "assets/audio/voices/1/triple-pair-0.ogg",
+          "text": "三带二！",
+          "duration": 0.834
+        }
+      ],
+      "straight": [
+        {
+          "file": "assets/audio/voices/1/straight-0.ogg",
+          "text": "顺子，一路顺风！",
+          "duration": 1.514
+        },
+        {
+          "file": "assets/audio/voices/1/straight-1.ogg",
+          "text": "顺子！",
+          "duration": 0.664
+        }
+      ],
+      "pair-straight": [
+        {
+          "file": "assets/audio/voices/1/pair-straight-0.ogg",
+          "text": "连对！",
+          "duration": 0.584
+        }
+      ],
+      "airplane": [
+        {
+          "file": "assets/audio/voices/1/airplane-0.ogg",
+          "text": "飞机，起飞！",
+          "duration": 1.102
+        }
+      ],
+      "airplane-single": [
+        {
+          "file": "assets/audio/voices/1/airplane-single-0.ogg",
+          "text": "飞机带翅膀！",
+          "duration": 1.23
+        }
+      ],
+      "airplane-pair": [
+        {
+          "file": "assets/audio/voices/1/airplane-pair-0.ogg",
+          "text": "飞机带对子！",
+          "duration": 1.229
+        }
+      ],
+      "four-two-single": [
+        {
+          "file": "assets/audio/voices/1/four-two-single-0.ogg",
+          "text": "四带二！",
+          "duration": 0.836
+        }
+      ],
+      "four-two-pair": [
+        {
+          "file": "assets/audio/voices/1/four-two-pair-0.ogg",
+          "text": "四带两对！",
+          "duration": 1.078
+        }
+      ],
+      "bomb": [
+        {
+          "file": "assets/audio/voices/1/bomb-0.ogg",
+          "text": "炸弹！接得住吗？",
+          "duration": 1.365
+        },
+        {
+          "file": "assets/audio/voices/1/bomb-1.ogg",
+          "text": "炸弹，漂亮！",
+          "duration": 1.157
+        }
+      ],
+      "rocket": [
+        {
+          "file": "assets/audio/voices/1/rocket-0.ogg",
+          "text": "王炸！好戏来了！",
+          "duration": 1.433
+        }
+      ],
+      "win": [
+        {
+          "file": "assets/audio/voices/1/win-0.ogg",
+          "text": "赢啦！这把配合得漂亮！",
+          "duration": 1.86
+        },
+        {
+          "file": "assets/audio/voices/1/win-1.ogg",
+          "text": "好牌，好心情！再来一局！",
+          "duration": 2.078
+        }
+      ],
+      "lose": [
+        {
+          "file": "assets/audio/voices/1/lose-0.ogg",
+          "text": "哎呀，差一点！下局再来！",
+          "duration": 2.03
+        },
+        {
+          "file": "assets/audio/voices/1/lose-1.ogg",
+          "text": "这局你厉害，再切磋一把！",
+          "duration": 2.374
+        }
+      ],
+      "tea": [
+        {
+          "file": "assets/audio/voices/1/tea-0.ogg",
+          "text": "来，请你喝杯茶。",
+          "duration": 1.575
+        }
+      ],
+      "flower": [
+        {
+          "file": "assets/audio/voices/1/flower-0.ogg",
+          "text": "送你一朵花，好运到你家！",
+          "duration": 2.219
+        }
+      ],
+      "tomato": [
+        {
+          "file": "assets/audio/voices/1/tomato-0.ogg",
+          "text": "嘿，接个番茄！",
+          "duration": 1.24
+        }
+      ],
+      "egg": [
+        {
+          "file": "assets/audio/voices/1/egg-0.ogg",
+          "text": "小心，鸡蛋来啦！",
+          "duration": 1.424
+        }
+      ],
+      "like": [
+        {
+          "file": "assets/audio/voices/1/like-0.ogg",
+          "text": "这手牌，打得漂亮！",
+          "duration": 1.599
+        }
+      ],
+      "phrase-hello": [
+        {
+          "file": "assets/audio/voices/1/phrase-hello-0.ogg",
+          "text": "各位牌友，晚上好！",
+          "duration": 1.646
+        }
+      ],
+      "phrase-hurry": [
+        {
+          "file": "assets/audio/voices/1/phrase-hurry-0.ogg",
+          "text": "快点吧，花儿都谢了！",
+          "duration": 1.739
+        }
+      ],
+      "phrase-good": [
+        {
+          "file": "assets/audio/voices/1/phrase-good-0.ogg",
+          "text": "这牌打得真漂亮！",
+          "duration": 1.59
+        }
+      ],
+      "phrase-team": [
+        {
+          "file": "assets/audio/voices/1/phrase-team-0.ogg",
+          "text": "和你合作真是太愉快了！",
+          "duration": 2.131
+        }
+      ],
+      "phrase-again": [
+        {
+          "file": "assets/audio/voices/1/phrase-again-0.ogg",
+          "text": "不要走，决战到天亮！",
+          "duration": 1.812
+        }
+      ],
+      "preview": [
+        {
+          "file": "assets/audio/voices/1/preview-0.ogg",
+          "text": "三分！这把我来！嗯，这手不要。好牌，打得漂亮！",
+          "duration": 3.624
+        }
+      ],
+      "single-3": [
+        {
+          "file": "assets/audio/voices/1/single-3-0.ogg",
+          "text": "三！",
+          "duration": 0.551
+        }
+      ],
+      "pair-3": [
+        {
+          "file": "assets/audio/voices/1/pair-3-0.ogg",
+          "text": "对三！",
+          "duration": 0.569
+        }
+      ],
+      "single-4": [
+        {
+          "file": "assets/audio/voices/1/single-4-0.ogg",
+          "text": "四！",
+          "duration": 0.548
+        }
+      ],
+      "pair-4": [
+        {
+          "file": "assets/audio/voices/1/pair-4-0.ogg",
+          "text": "对四！",
+          "duration": 0.583
+        }
+      ],
+      "single-5": [
+        {
+          "file": "assets/audio/voices/1/single-5-0.ogg",
+          "text": "五！",
+          "duration": 0.489
+        }
+      ],
+      "pair-5": [
+        {
+          "file": "assets/audio/voices/1/pair-5-0.ogg",
+          "text": "对五！",
+          "duration": 0.582
+        }
+      ],
+      "single-6": [
+        {
+          "file": "assets/audio/voices/1/single-6-0.ogg",
+          "text": "六！",
+          "duration": 0.564
+        }
+      ],
+      "pair-6": [
+        {
+          "file": "assets/audio/voices/1/pair-6-0.ogg",
+          "text": "对六！",
+          "duration": 0.581
+        }
+      ],
+      "single-7": [
+        {
+          "file": "assets/audio/voices/1/single-7-0.ogg",
+          "text": "七！",
+          "duration": 0.55
+        }
+      ],
+      "pair-7": [
+        {
+          "file": "assets/audio/voices/1/pair-7-0.ogg",
+          "text": "对七！",
+          "duration": 0.559
+        }
+      ],
+      "single-8": [
+        {
+          "file": "assets/audio/voices/1/single-8-0.ogg",
+          "text": "八！",
+          "duration": 0.469
+        }
+      ],
+      "pair-8": [
+        {
+          "file": "assets/audio/voices/1/pair-8-0.ogg",
+          "text": "对八！",
+          "duration": 0.546
+        }
+      ],
+      "single-9": [
+        {
+          "file": "assets/audio/voices/1/single-9-0.ogg",
+          "text": "九！",
+          "duration": 0.509
+        }
+      ],
+      "pair-9": [
+        {
+          "file": "assets/audio/voices/1/pair-9-0.ogg",
+          "text": "对九！",
+          "duration": 0.574
+        }
+      ],
+      "single-10": [
+        {
+          "file": "assets/audio/voices/1/single-10-0.ogg",
+          "text": "十！",
+          "duration": 0.556
+        }
+      ],
+      "pair-10": [
+        {
+          "file": "assets/audio/voices/1/pair-10-0.ogg",
+          "text": "对十！",
+          "duration": 0.569
+        }
+      ],
+      "single-11": [
+        {
+          "file": "assets/audio/voices/1/single-11-0.ogg",
+          "text": "勾！",
+          "duration": 0.483
+        }
+      ],
+      "pair-11": [
+        {
+          "file": "assets/audio/voices/1/pair-11-0.ogg",
+          "text": "对勾！",
+          "duration": 0.54
+        }
+      ],
+      "single-12": [
+        {
+          "file": "assets/audio/voices/1/single-12-0.ogg",
+          "text": "圈！",
+          "duration": 0.609
+        }
+      ],
+      "pair-12": [
+        {
+          "file": "assets/audio/voices/1/pair-12-0.ogg",
+          "text": "对圈！",
+          "duration": 0.568
+        }
+      ],
+      "single-13": [
+        {
+          "file": "assets/audio/voices/1/single-13-0.ogg",
+          "text": "凯！",
+          "duration": 0.571
+        }
+      ],
+      "pair-13": [
+        {
+          "file": "assets/audio/voices/1/pair-13-0.ogg",
+          "text": "对凯！",
+          "duration": 0.592
+        }
+      ],
+      "single-14": [
+        {
+          "file": "assets/audio/voices/1/single-14-0.ogg",
+          "text": "尖！",
+          "duration": 0.507
+        }
+      ],
+      "pair-14": [
+        {
+          "file": "assets/audio/voices/1/pair-14-0.ogg",
+          "text": "对尖！",
+          "duration": 0.565
+        }
+      ],
+      "single-15": [
+        {
+          "file": "assets/audio/voices/1/single-15-0.ogg",
+          "text": "二！",
+          "duration": 0.509
+        }
+      ],
+      "pair-15": [
+        {
+          "file": "assets/audio/voices/1/pair-15-0.ogg",
+          "text": "对二！",
+          "duration": 0.521
+        }
+      ],
+      "single-16": [
+        {
+          "file": "assets/audio/voices/1/single-16-0.ogg",
+          "text": "小王！",
+          "duration": 0.657
+        }
+      ],
+      "single-17": [
+        {
+          "file": "assets/audio/voices/1/single-17-0.ogg",
+          "text": "大王！",
+          "duration": 0.561
+        }
+      ]
+    },
+    "2": {
+      "bid-0": [
+        {
+          "file": "assets/audio/voices/2/bid-0-0.ogg",
+          "text": "这回不叫。",
+          "duration": 1.206
+        },
+        {
+          "file": "assets/audio/voices/2/bid-0-1.ogg",
+          "text": "先让你们来。",
+          "duration": 1.373
+        }
+      ],
+      "bid-1": [
+        {
+          "file": "assets/audio/voices/2/bid-1-0.ogg",
+          "text": "一分！",
+          "duration": 0.666
+        }
+      ],
+      "bid-2": [
+        {
+          "file": "assets/audio/voices/2/bid-2-0.ogg",
+          "text": "两分！",
+          "duration": 0.691
+        }
+      ],
+      "bid-3": [
+        {
+          "file": "assets/audio/voices/2/bid-3-0.ogg",
+          "text": "三分！这把我来！",
+          "duration": 1.619
+        },
+        {
+          "file": "assets/audio/voices/2/bid-3-1.ogg",
+          "text": "三分，开个好局！",
+          "duration": 1.594
+        }
+      ],
+      "double-0": [
+        {
+          "file": "assets/audio/voices/2/double-0-0.ogg",
+          "text": "稳一点，不加倍。",
+          "duration": 1.594
+        },
+        {
+          "file": "assets/audio/voices/2/double-0-1.ogg",
+          "text": "这把不加倍。",
+          "duration": 1.317
+        }
+      ],
+      "double-1": [
+        {
+          "file": "assets/audio/voices/2/double-1-0.ogg",
+          "text": "加倍！",
+          "duration": 0.682
+        },
+        {
+          "file": "assets/audio/voices/2/double-1-1.ogg",
+          "text": "好牌，加倍！",
+          "duration": 1.347
+        }
+      ],
+      "pass": [
+        {
+          "file": "assets/audio/voices/2/pass-0.ogg",
+          "text": "这手不要。",
+          "duration": 1.19
+        },
+        {
+          "file": "assets/audio/voices/2/pass-1.ogg",
+          "text": "过，看看你的！",
+          "duration": 1.41
+        },
+        {
+          "file": "assets/audio/voices/2/pass-2.ogg",
+          "text": "你先出，我等一等。",
+          "duration": 1.811
+        }
+      ],
+      "play": [
+        {
+          "file": "assets/audio/voices/2/play-0.ogg",
+          "text": "看我的！",
+          "duration": 0.874
+        },
+        {
+          "file": "assets/audio/voices/2/play-1.ogg",
+          "text": "接好了！",
+          "duration": 0.949
+        }
+      ],
+      "triple": [
+        {
+          "file": "assets/audio/voices/2/triple-0.ogg",
+          "text": "三张！",
+          "duration": 0.709
+        }
+      ],
+      "triple-single": [
+        {
+          "file": "assets/audio/voices/2/triple-single-0.ogg",
+          "text": "三带一！",
+          "duration": 0.923
+        }
+      ],
+      "triple-pair": [
+        {
+          "file": "assets/audio/voices/2/triple-pair-0.ogg",
+          "text": "三带二！",
+          "duration": 0.964
+        }
+      ],
+      "straight": [
+        {
+          "file": "assets/audio/voices/2/straight-0.ogg",
+          "text": "顺子，一路顺风！",
+          "duration": 1.739
+        },
+        {
+          "file": "assets/audio/voices/2/straight-1.ogg",
+          "text": "顺子！",
+          "duration": 0.705
+        }
+      ],
+      "pair-straight": [
+        {
+          "file": "assets/audio/voices/2/pair-straight-0.ogg",
+          "text": "连对！",
+          "duration": 0.65
+        }
+      ],
+      "airplane": [
+        {
+          "file": "assets/audio/voices/2/airplane-0.ogg",
+          "text": "飞机，起飞！",
+          "duration": 1.28
+        }
+      ],
+      "airplane-single": [
+        {
+          "file": "assets/audio/voices/2/airplane-single-0.ogg",
+          "text": "飞机带翅膀！",
+          "duration": 1.481
+        }
+      ],
+      "airplane-pair": [
+        {
+          "file": "assets/audio/voices/2/airplane-pair-0.ogg",
+          "text": "飞机带对子！",
+          "duration": 1.456
+        }
+      ],
+      "four-two-single": [
+        {
+          "file": "assets/audio/voices/2/four-two-single-0.ogg",
+          "text": "四带二！",
+          "duration": 0.974
+        }
+      ],
+      "four-two-pair": [
+        {
+          "file": "assets/audio/voices/2/four-two-pair-0.ogg",
+          "text": "四带两对！",
+          "duration": 1.223
+        }
+      ],
+      "bomb": [
+        {
+          "file": "assets/audio/voices/2/bomb-0.ogg",
+          "text": "炸弹！接得住吗？",
+          "duration": 1.547
+        },
+        {
+          "file": "assets/audio/voices/2/bomb-1.ogg",
+          "text": "炸弹，漂亮！",
+          "duration": 1.278
+        }
+      ],
+      "rocket": [
+        {
+          "file": "assets/audio/voices/2/rocket-0.ogg",
+          "text": "王炸！好戏来了！",
+          "duration": 1.617
+        }
+      ],
+      "win": [
+        {
+          "file": "assets/audio/voices/2/win-0.ogg",
+          "text": "赢啦！这把配合得漂亮！",
+          "duration": 2.187
+        },
+        {
+          "file": "assets/audio/voices/2/win-1.ogg",
+          "text": "好牌，好心情！再来一局！",
+          "duration": 2.465
+        }
+      ],
+      "lose": [
+        {
+          "file": "assets/audio/voices/2/lose-0.ogg",
+          "text": "哎呀，差一点！下局再来！",
+          "duration": 2.452
+        },
+        {
+          "file": "assets/audio/voices/2/lose-1.ogg",
+          "text": "这局你厉害，再切磋一把！",
+          "duration": 2.784
+        }
+      ],
+      "tea": [
+        {
+          "file": "assets/audio/voices/2/tea-0.ogg",
+          "text": "来，请你喝杯茶。",
+          "duration": 1.792
+        }
+      ],
+      "flower": [
+        {
+          "file": "assets/audio/voices/2/flower-0.ogg",
+          "text": "送你一朵花，好运到你家！",
+          "duration": 2.6
+        }
+      ],
+      "tomato": [
+        {
+          "file": "assets/audio/voices/2/tomato-0.ogg",
+          "text": "嘿，接个番茄！",
+          "duration": 1.549
+        }
+      ],
+      "egg": [
+        {
+          "file": "assets/audio/voices/2/egg-0.ogg",
+          "text": "小心，鸡蛋来啦！",
+          "duration": 1.597
+        }
+      ],
+      "like": [
+        {
+          "file": "assets/audio/voices/2/like-0.ogg",
+          "text": "这手牌，打得漂亮！",
+          "duration": 1.701
+        }
+      ],
+      "phrase-hello": [
+        {
+          "file": "assets/audio/voices/2/phrase-hello-0.ogg",
+          "text": "各位牌友，晚上好！",
+          "duration": 1.948
+        }
+      ],
+      "phrase-hurry": [
+        {
+          "file": "assets/audio/voices/2/phrase-hurry-0.ogg",
+          "text": "快点吧，花儿都谢了！",
+          "duration": 2.012
+        }
+      ],
+      "phrase-good": [
+        {
+          "file": "assets/audio/voices/2/phrase-good-0.ogg",
+          "text": "这牌打得真漂亮！",
+          "duration": 1.699
+        }
+      ],
+      "phrase-team": [
+        {
+          "file": "assets/audio/voices/2/phrase-team-0.ogg",
+          "text": "和你合作真是太愉快了！",
+          "duration": 2.474
+        }
+      ],
+      "phrase-again": [
+        {
+          "file": "assets/audio/voices/2/phrase-again-0.ogg",
+          "text": "不要走，决战到天亮！",
+          "duration": 1.965
+        }
+      ],
+      "preview": [
+        {
+          "file": "assets/audio/voices/2/preview-0.ogg",
+          "text": "三分！这把我来！嗯，这手不要。好牌，打得漂亮！",
+          "duration": 3.949
+        }
+      ],
+      "single-3": [
+        {
+          "file": "assets/audio/voices/2/single-3-0.ogg",
+          "text": "三！",
+          "duration": 0.508
+        }
+      ],
+      "pair-3": [
+        {
+          "file": "assets/audio/voices/2/pair-3-0.ogg",
+          "text": "对三！",
+          "duration": 0.692
+        }
+      ],
+      "single-4": [
+        {
+          "file": "assets/audio/voices/2/single-4-0.ogg",
+          "text": "四！",
+          "duration": 0.515
+        }
+      ],
+      "pair-4": [
+        {
+          "file": "assets/audio/voices/2/pair-4-0.ogg",
+          "text": "对四！",
+          "duration": 0.707
+        }
+      ],
+      "single-5": [
+        {
+          "file": "assets/audio/voices/2/single-5-0.ogg",
+          "text": "五！",
+          "duration": 0.609
+        }
+      ],
+      "pair-5": [
+        {
+          "file": "assets/audio/voices/2/pair-5-0.ogg",
+          "text": "对五！",
+          "duration": 0.621
+        }
+      ],
+      "single-6": [
+        {
+          "file": "assets/audio/voices/2/single-6-0.ogg",
+          "text": "六！",
+          "duration": 0.476
+        }
+      ],
+      "pair-6": [
+        {
+          "file": "assets/audio/voices/2/pair-6-0.ogg",
+          "text": "对六！",
+          "duration": 0.673
+        }
+      ],
+      "single-7": [
+        {
+          "file": "assets/audio/voices/2/single-7-0.ogg",
+          "text": "七！",
+          "duration": 0.508
+        }
+      ],
+      "pair-7": [
+        {
+          "file": "assets/audio/voices/2/pair-7-0.ogg",
+          "text": "对七！",
+          "duration": 0.685
+        }
+      ],
+      "single-8": [
+        {
+          "file": "assets/audio/voices/2/single-8-0.ogg",
+          "text": "八！",
+          "duration": 0.605
+        }
+      ],
+      "pair-8": [
+        {
+          "file": "assets/audio/voices/2/pair-8-0.ogg",
+          "text": "对八！",
+          "duration": 0.616
+        }
+      ],
+      "single-9": [
+        {
+          "file": "assets/audio/voices/2/single-9-0.ogg",
+          "text": "九！",
+          "duration": 0.529
+        }
+      ],
+      "pair-9": [
+        {
+          "file": "assets/audio/voices/2/pair-9-0.ogg",
+          "text": "对九！",
+          "duration": 0.684
+        }
+      ],
+      "single-10": [
+        {
+          "file": "assets/audio/voices/2/single-10-0.ogg",
+          "text": "十！",
+          "duration": 0.556
+        }
+      ],
+      "pair-10": [
+        {
+          "file": "assets/audio/voices/2/pair-10-0.ogg",
+          "text": "对十！",
+          "duration": 0.693
+        }
+      ],
+      "single-11": [
+        {
+          "file": "assets/audio/voices/2/single-11-0.ogg",
+          "text": "勾！",
+          "duration": 0.615
+        }
+      ],
+      "pair-11": [
+        {
+          "file": "assets/audio/voices/2/pair-11-0.ogg",
+          "text": "对勾！",
+          "duration": 0.666
+        }
+      ],
+      "single-12": [
+        {
+          "file": "assets/audio/voices/2/single-12-0.ogg",
+          "text": "圈！",
+          "duration": 0.542
+        }
+      ],
+      "pair-12": [
+        {
+          "file": "assets/audio/voices/2/pair-12-0.ogg",
+          "text": "对圈！",
+          "duration": 0.699
+        }
+      ],
+      "single-13": [
+        {
+          "file": "assets/audio/voices/2/single-13-0.ogg",
+          "text": "凯！",
+          "duration": 0.472
+        }
+      ],
+      "pair-13": [
+        {
+          "file": "assets/audio/voices/2/pair-13-0.ogg",
+          "text": "对凯！",
+          "duration": 0.679
+        }
+      ],
+      "single-14": [
+        {
+          "file": "assets/audio/voices/2/single-14-0.ogg",
+          "text": "尖！",
+          "duration": 0.529
+        }
+      ],
+      "pair-14": [
+        {
+          "file": "assets/audio/voices/2/pair-14-0.ogg",
+          "text": "对尖！",
+          "duration": 0.686
+        }
+      ],
+      "single-15": [
+        {
+          "file": "assets/audio/voices/2/single-15-0.ogg",
+          "text": "二！",
+          "duration": 0.62
+        }
+      ],
+      "pair-15": [
+        {
+          "file": "assets/audio/voices/2/pair-15-0.ogg",
+          "text": "对二！",
+          "duration": 0.639
+        }
+      ],
+      "single-16": [
+        {
+          "file": "assets/audio/voices/2/single-16-0.ogg",
+          "text": "小王！",
+          "duration": 0.748
+        }
+      ],
+      "single-17": [
+        {
+          "file": "assets/audio/voices/2/single-17-0.ogg",
+          "text": "大王！",
+          "duration": 0.647
+        }
+      ]
+    },
+    "3": {
+      "bid-0": [
+        {
+          "file": "assets/audio/voices/3/bid-0-0.ogg",
+          "text": "这回不叫。",
+          "duration": 1.211
+        },
+        {
+          "file": "assets/audio/voices/3/bid-0-1.ogg",
+          "text": "先让你们来。",
+          "duration": 1.353
+        }
+      ],
+      "bid-1": [
+        {
+          "file": "assets/audio/voices/3/bid-1-0.ogg",
+          "text": "一分！",
+          "duration": 0.694
+        }
+      ],
+      "bid-2": [
+        {
+          "file": "assets/audio/voices/3/bid-2-0.ogg",
+          "text": "两分！",
+          "duration": 0.723
+        }
+      ],
+      "bid-3": [
+        {
+          "file": "assets/audio/voices/3/bid-3-0.ogg",
+          "text": "三分！这把我来！",
+          "duration": 1.67
+        },
+        {
+          "file": "assets/audio/voices/3/bid-3-1.ogg",
+          "text": "三分，开个好局！",
+          "duration": 1.673
+        }
+      ],
+      "double-0": [
+        {
+          "file": "assets/audio/voices/3/double-0-0.ogg",
+          "text": "稳一点，不加倍。",
+          "duration": 1.641
+        },
+        {
+          "file": "assets/audio/voices/3/double-0-1.ogg",
+          "text": "这把不加倍。",
+          "duration": 1.377
+        }
+      ],
+      "double-1": [
+        {
+          "file": "assets/audio/voices/3/double-1-0.ogg",
+          "text": "加倍！",
+          "duration": 0.701
+        },
+        {
+          "file": "assets/audio/voices/3/double-1-1.ogg",
+          "text": "好牌，加倍！",
+          "duration": 1.35
+        }
+      ],
+      "pass": [
+        {
+          "file": "assets/audio/voices/3/pass-0.ogg",
+          "text": "这手不要。",
+          "duration": 1.22
+        },
+        {
+          "file": "assets/audio/voices/3/pass-1.ogg",
+          "text": "过，看看你的！",
+          "duration": 1.531
+        },
+        {
+          "file": "assets/audio/voices/3/pass-2.ogg",
+          "text": "你先出，我等一等。",
+          "duration": 1.97
+        }
+      ],
+      "play": [
+        {
+          "file": "assets/audio/voices/3/play-0.ogg",
+          "text": "看我的！",
+          "duration": 0.936
+        },
+        {
+          "file": "assets/audio/voices/3/play-1.ogg",
+          "text": "接好了！",
+          "duration": 0.991
+        }
+      ],
+      "triple": [
+        {
+          "file": "assets/audio/voices/3/triple-0.ogg",
+          "text": "三张！",
+          "duration": 0.764
+        }
+      ],
+      "triple-single": [
+        {
+          "file": "assets/audio/voices/3/triple-single-0.ogg",
+          "text": "三带一！",
+          "duration": 1.0
+        }
+      ],
+      "triple-pair": [
+        {
+          "file": "assets/audio/voices/3/triple-pair-0.ogg",
+          "text": "三带二！",
+          "duration": 0.971
+        }
+      ],
+      "straight": [
+        {
+          "file": "assets/audio/voices/3/straight-0.ogg",
+          "text": "顺子，一路顺风！",
+          "duration": 1.727
+        },
+        {
+          "file": "assets/audio/voices/3/straight-1.ogg",
+          "text": "顺子！",
+          "duration": 0.746
+        }
+      ],
+      "pair-straight": [
+        {
+          "file": "assets/audio/voices/3/pair-straight-0.ogg",
+          "text": "连对！",
+          "duration": 0.668
+        }
+      ],
+      "airplane": [
+        {
+          "file": "assets/audio/voices/3/airplane-0.ogg",
+          "text": "飞机，起飞！",
+          "duration": 1.344
+        }
+      ],
+      "airplane-single": [
+        {
+          "file": "assets/audio/voices/3/airplane-single-0.ogg",
+          "text": "飞机带翅膀！",
+          "duration": 1.536
+        }
+      ],
+      "airplane-pair": [
+        {
+          "file": "assets/audio/voices/3/airplane-pair-0.ogg",
+          "text": "飞机带对子！",
+          "duration": 1.504
+        }
+      ],
+      "four-two-single": [
+        {
+          "file": "assets/audio/voices/3/four-two-single-0.ogg",
+          "text": "四带二！",
+          "duration": 0.975
+        }
+      ],
+      "four-two-pair": [
+        {
+          "file": "assets/audio/voices/3/four-two-pair-0.ogg",
+          "text": "四带两对！",
+          "duration": 1.246
+        }
+      ],
+      "bomb": [
+        {
+          "file": "assets/audio/voices/3/bomb-0.ogg",
+          "text": "炸弹！接得住吗？",
+          "duration": 1.545
+        },
+        {
+          "file": "assets/audio/voices/3/bomb-1.ogg",
+          "text": "炸弹，漂亮！",
+          "duration": 1.324
+        }
+      ],
+      "rocket": [
+        {
+          "file": "assets/audio/voices/3/rocket-0.ogg",
+          "text": "王炸！好戏来了！",
+          "duration": 1.63
+        }
+      ],
+      "win": [
+        {
+          "file": "assets/audio/voices/3/win-0.ogg",
+          "text": "赢啦！这把配合得漂亮！",
+          "duration": 2.133
+        },
+        {
+          "file": "assets/audio/voices/3/win-1.ogg",
+          "text": "好牌，好心情！再来一局！",
+          "duration": 2.452
+        }
+      ],
+      "lose": [
+        {
+          "file": "assets/audio/voices/3/lose-0.ogg",
+          "text": "哎呀，差一点！下局再来！",
+          "duration": 2.473
+        },
+        {
+          "file": "assets/audio/voices/3/lose-1.ogg",
+          "text": "这局你厉害，再切磋一把！",
+          "duration": 2.917
+        }
+      ],
+      "tea": [
+        {
+          "file": "assets/audio/voices/3/tea-0.ogg",
+          "text": "来，请你喝杯茶。",
+          "duration": 1.802
+        }
+      ],
+      "flower": [
+        {
+          "file": "assets/audio/voices/3/flower-0.ogg",
+          "text": "送你一朵花，好运到你家！",
+          "duration": 2.634
+        }
+      ],
+      "tomato": [
+        {
+          "file": "assets/audio/voices/3/tomato-0.ogg",
+          "text": "嘿，接个番茄！",
+          "duration": 1.566
+        }
+      ],
+      "egg": [
+        {
+          "file": "assets/audio/voices/3/egg-0.ogg",
+          "text": "小心，鸡蛋来啦！",
+          "duration": 1.698
+        }
+      ],
+      "like": [
+        {
+          "file": "assets/audio/voices/3/like-0.ogg",
+          "text": "这手牌，打得漂亮！",
+          "duration": 1.905
+        }
+      ],
+      "phrase-hello": [
+        {
+          "file": "assets/audio/voices/3/phrase-hello-0.ogg",
+          "text": "各位牌友，晚上好！",
+          "duration": 2.039
+        }
+      ],
+      "phrase-hurry": [
+        {
+          "file": "assets/audio/voices/3/phrase-hurry-0.ogg",
+          "text": "快点吧，花儿都谢了！",
+          "duration": 2.071
+        }
+      ],
+      "phrase-good": [
+        {
+          "file": "assets/audio/voices/3/phrase-good-0.ogg",
+          "text": "这牌打得真漂亮！",
+          "duration": 1.861
+        }
+      ],
+      "phrase-team": [
+        {
+          "file": "assets/audio/voices/3/phrase-team-0.ogg",
+          "text": "和你合作真是太愉快了！",
+          "duration": 2.524
+        }
+      ],
+      "phrase-again": [
+        {
+          "file": "assets/audio/voices/3/phrase-again-0.ogg",
+          "text": "不要走，决战到天亮！",
+          "duration": 2.098
+        }
+      ],
+      "preview": [
+        {
+          "file": "assets/audio/voices/3/preview-0.ogg",
+          "text": "三分！这把我来！嗯，这手不要。好牌，打得漂亮！",
+          "duration": 4.367
+        }
+      ],
+      "single-3": [
+        {
+          "file": "assets/audio/voices/3/single-3-0.ogg",
+          "text": "三！",
+          "duration": 0.528
+        }
+      ],
+      "pair-3": [
+        {
+          "file": "assets/audio/voices/3/pair-3-0.ogg",
+          "text": "对三！",
+          "duration": 0.632
+        }
+      ],
+      "single-4": [
+        {
+          "file": "assets/audio/voices/3/single-4-0.ogg",
+          "text": "四！",
+          "duration": 0.522
+        }
+      ],
+      "pair-4": [
+        {
+          "file": "assets/audio/voices/3/pair-4-0.ogg",
+          "text": "对四！",
+          "duration": 0.709
+        }
+      ],
+      "single-5": [
+        {
+          "file": "assets/audio/voices/3/single-5-0.ogg",
+          "text": "五！",
+          "duration": 0.627
+        }
+      ],
+      "pair-5": [
+        {
+          "file": "assets/audio/voices/3/pair-5-0.ogg",
+          "text": "对五！",
+          "duration": 0.662
+        }
+      ],
+      "single-6": [
+        {
+          "file": "assets/audio/voices/3/single-6-0.ogg",
+          "text": "六！",
+          "duration": 0.463
+        }
+      ],
+      "pair-6": [
+        {
+          "file": "assets/audio/voices/3/pair-6-0.ogg",
+          "text": "对六！",
+          "duration": 0.658
+        }
+      ],
+      "single-7": [
+        {
+          "file": "assets/audio/voices/3/single-7-0.ogg",
+          "text": "七！",
+          "duration": 0.548
+        }
+      ],
+      "pair-7": [
+        {
+          "file": "assets/audio/voices/3/pair-7-0.ogg",
+          "text": "对七！",
+          "duration": 0.752
+        }
+      ],
+      "single-8": [
+        {
+          "file": "assets/audio/voices/3/single-8-0.ogg",
+          "text": "八！",
+          "duration": 0.447
+        }
+      ],
+      "pair-8": [
+        {
+          "file": "assets/audio/voices/3/pair-8-0.ogg",
+          "text": "对八！",
+          "duration": 0.601
+        }
+      ],
+      "single-9": [
+        {
+          "file": "assets/audio/voices/3/single-9-0.ogg",
+          "text": "九！",
+          "duration": 0.531
+        }
+      ],
+      "pair-9": [
+        {
+          "file": "assets/audio/voices/3/pair-9-0.ogg",
+          "text": "对九！",
+          "duration": 0.702
+        }
+      ],
+      "single-10": [
+        {
+          "file": "assets/audio/voices/3/single-10-0.ogg",
+          "text": "十！",
+          "duration": 0.535
+        }
+      ],
+      "pair-10": [
+        {
+          "file": "assets/audio/voices/3/pair-10-0.ogg",
+          "text": "对十！",
+          "duration": 0.724
+        }
+      ],
+      "single-11": [
+        {
+          "file": "assets/audio/voices/3/single-11-0.ogg",
+          "text": "勾！",
+          "duration": 0.439
+        }
+      ],
+      "pair-11": [
+        {
+          "file": "assets/audio/voices/3/pair-11-0.ogg",
+          "text": "对勾！",
+          "duration": 0.639
+        }
+      ],
+      "single-12": [
+        {
+          "file": "assets/audio/voices/3/single-12-0.ogg",
+          "text": "圈！",
+          "duration": 0.554
+        }
+      ],
+      "pair-12": [
+        {
+          "file": "assets/audio/voices/3/pair-12-0.ogg",
+          "text": "对圈！",
+          "duration": 0.715
+        }
+      ],
+      "single-13": [
+        {
+          "file": "assets/audio/voices/3/single-13-0.ogg",
+          "text": "凯！",
+          "duration": 0.51
+        }
+      ],
+      "pair-13": [
+        {
+          "file": "assets/audio/voices/3/pair-13-0.ogg",
+          "text": "对凯！",
+          "duration": 0.664
+        }
+      ],
+      "single-14": [
+        {
+          "file": "assets/audio/voices/3/single-14-0.ogg",
+          "text": "尖！",
+          "duration": 0.506
+        }
+      ],
+      "pair-14": [
+        {
+          "file": "assets/audio/voices/3/pair-14-0.ogg",
+          "text": "对尖！",
+          "duration": 0.643
+        }
+      ],
+      "single-15": [
+        {
+          "file": "assets/audio/voices/3/single-15-0.ogg",
+          "text": "二！",
+          "duration": 0.47
+        }
+      ],
+      "pair-15": [
+        {
+          "file": "assets/audio/voices/3/pair-15-0.ogg",
+          "text": "对二！",
+          "duration": 0.627
+        }
+      ],
+      "single-16": [
+        {
+          "file": "assets/audio/voices/3/single-16-0.ogg",
+          "text": "小王！",
+          "duration": 0.782
+        }
+      ],
+      "single-17": [
+        {
+          "file": "assets/audio/voices/3/single-17-0.ogg",
+          "text": "大王！",
+          "duration": 0.652
+        }
+      ]
+    },
+    "4": {
+      "bid-0": [
+        {
+          "file": "assets/audio/voices/4/bid-0-0.ogg",
+          "text": "这回不叫。",
+          "duration": 1.028
+        },
+        {
+          "file": "assets/audio/voices/4/bid-0-1.ogg",
+          "text": "先让你们来。",
+          "duration": 1.22
+        }
+      ],
+      "bid-1": [
+        {
+          "file": "assets/audio/voices/4/bid-1-0.ogg",
+          "text": "一分！",
+          "duration": 0.628
+        }
+      ],
+      "bid-2": [
+        {
+          "file": "assets/audio/voices/4/bid-2-0.ogg",
+          "text": "两分！",
+          "duration": 1.015
+        }
+      ],
+      "bid-3": [
+        {
+          "file": "assets/audio/voices/4/bid-3-0.ogg",
+          "text": "三分！这把我来！",
+          "duration": 1.512
+        },
+        {
+          "file": "assets/audio/voices/4/bid-3-1.ogg",
+          "text": "三分，开个好局！",
+          "duration": 1.522
+        }
+      ],
+      "double-0": [
+        {
+          "file": "assets/audio/voices/4/double-0-0.ogg",
+          "text": "稳一点，不加倍。",
+          "duration": 1.5
+        },
+        {
+          "file": "assets/audio/voices/4/double-0-1.ogg",
+          "text": "这把不加倍。",
+          "duration": 1.244
+        }
+      ],
+      "double-1": [
+        {
+          "file": "assets/audio/voices/4/double-1-0.ogg",
+          "text": "加倍！",
+          "duration": 1.031
+        },
+        {
+          "file": "assets/audio/voices/4/double-1-1.ogg",
+          "text": "好牌，加倍！",
+          "duration": 1.153
+        }
+      ],
+      "pass": [
+        {
+          "file": "assets/audio/voices/4/pass-0.ogg",
+          "text": "这手不要。",
+          "duration": 1.1
+        },
+        {
+          "file": "assets/audio/voices/4/pass-1.ogg",
+          "text": "过，看看你的！",
+          "duration": 1.329
+        },
+        {
+          "file": "assets/audio/voices/4/pass-2.ogg",
+          "text": "你先出，我等一等。",
+          "duration": 1.801
+        }
+      ],
+      "play": [
+        {
+          "file": "assets/audio/voices/4/play-0.ogg",
+          "text": "看我的！",
+          "duration": 0.77
+        },
+        {
+          "file": "assets/audio/voices/4/play-1.ogg",
+          "text": "接好了！",
+          "duration": 0.82
+        }
+      ],
+      "triple": [
+        {
+          "file": "assets/audio/voices/4/triple-0.ogg",
+          "text": "三张！",
+          "duration": 0.643
+        }
+      ],
+      "triple-single": [
+        {
+          "file": "assets/audio/voices/4/triple-single-0.ogg",
+          "text": "三带一！",
+          "duration": 0.884
+        }
+      ],
+      "triple-pair": [
+        {
+          "file": "assets/audio/voices/4/triple-pair-0.ogg",
+          "text": "三带二！",
+          "duration": 0.922
+        }
+      ],
+      "straight": [
+        {
+          "file": "assets/audio/voices/4/straight-0.ogg",
+          "text": "顺子，一路顺风！",
+          "duration": 1.539
+        },
+        {
+          "file": "assets/audio/voices/4/straight-1.ogg",
+          "text": "顺子！",
+          "duration": 0.674
+        }
+      ],
+      "pair-straight": [
+        {
+          "file": "assets/audio/voices/4/pair-straight-0.ogg",
+          "text": "连对！",
+          "duration": 1.004
+        }
+      ],
+      "airplane": [
+        {
+          "file": "assets/audio/voices/4/airplane-0.ogg",
+          "text": "飞机，起飞！",
+          "duration": 1.137
+        }
+      ],
+      "airplane-single": [
+        {
+          "file": "assets/audio/voices/4/airplane-single-0.ogg",
+          "text": "飞机带翅膀！",
+          "duration": 1.378
+        }
+      ],
+      "airplane-pair": [
+        {
+          "file": "assets/audio/voices/4/airplane-pair-0.ogg",
+          "text": "飞机带对子！",
+          "duration": 1.332
+        }
+      ],
+      "four-two-single": [
+        {
+          "file": "assets/audio/voices/4/four-two-single-0.ogg",
+          "text": "四带二！",
+          "duration": 0.87
+        }
+      ],
+      "four-two-pair": [
+        {
+          "file": "assets/audio/voices/4/four-two-pair-0.ogg",
+          "text": "四带两对！",
+          "duration": 1.104
+        }
+      ],
+      "bomb": [
+        {
+          "file": "assets/audio/voices/4/bomb-0.ogg",
+          "text": "炸弹！接得住吗？",
+          "duration": 1.452
+        },
+        {
+          "file": "assets/audio/voices/4/bomb-1.ogg",
+          "text": "炸弹，漂亮！",
+          "duration": 1.168
+        }
+      ],
+      "rocket": [
+        {
+          "file": "assets/audio/voices/4/rocket-0.ogg",
+          "text": "王炸！好戏来了！",
+          "duration": 1.551
+        }
+      ],
+      "win": [
+        {
+          "file": "assets/audio/voices/4/win-0.ogg",
+          "text": "赢啦！这把配合得漂亮！",
+          "duration": 2.056
+        },
+        {
+          "file": "assets/audio/voices/4/win-1.ogg",
+          "text": "好牌，好心情！再来一局！",
+          "duration": 2.397
+        }
+      ],
+      "lose": [
+        {
+          "file": "assets/audio/voices/4/lose-0.ogg",
+          "text": "哎呀，差一点！下局再来！",
+          "duration": 2.44
+        },
+        {
+          "file": "assets/audio/voices/4/lose-1.ogg",
+          "text": "这局你厉害，再切磋一把！",
+          "duration": 2.781
+        }
+      ],
+      "tea": [
+        {
+          "file": "assets/audio/voices/4/tea-0.ogg",
+          "text": "来，请你喝杯茶。",
+          "duration": 1.78
+        }
+      ],
+      "flower": [
+        {
+          "file": "assets/audio/voices/4/flower-0.ogg",
+          "text": "送你一朵花，好运到你家！",
+          "duration": 2.567
+        }
+      ],
+      "tomato": [
+        {
+          "file": "assets/audio/voices/4/tomato-0.ogg",
+          "text": "嘿，接个番茄！",
+          "duration": 1.385
+        }
+      ],
+      "egg": [
+        {
+          "file": "assets/audio/voices/4/egg-0.ogg",
+          "text": "小心，鸡蛋来啦！",
+          "duration": 1.559
+        }
+      ],
+      "like": [
+        {
+          "file": "assets/audio/voices/4/like-0.ogg",
+          "text": "这手牌，打得漂亮！",
+          "duration": 1.791
+        }
+      ],
+      "phrase-hello": [
+        {
+          "file": "assets/audio/voices/4/phrase-hello-0.ogg",
+          "text": "各位牌友，晚上好！",
+          "duration": 2.073
+        }
+      ],
+      "phrase-hurry": [
+        {
+          "file": "assets/audio/voices/4/phrase-hurry-0.ogg",
+          "text": "快点吧，花儿都谢了！",
+          "duration": 1.858
+        }
+      ],
+      "phrase-good": [
+        {
+          "file": "assets/audio/voices/4/phrase-good-0.ogg",
+          "text": "这牌打得真漂亮！",
+          "duration": 1.768
+        }
+      ],
+      "phrase-team": [
+        {
+          "file": "assets/audio/voices/4/phrase-team-0.ogg",
+          "text": "和你合作真是太愉快了！",
+          "duration": 2.353
+        }
+      ],
+      "phrase-again": [
+        {
+          "file": "assets/audio/voices/4/phrase-again-0.ogg",
+          "text": "不要走，决战到天亮！",
+          "duration": 1.883
+        }
+      ],
+      "preview": [
+        {
+          "file": "assets/audio/voices/4/preview-0.ogg",
+          "text": "三分！这把我来！嗯，这手不要。好牌，打得漂亮！",
+          "duration": 4.019
+        }
+      ],
+      "single-3": [
+        {
+          "file": "assets/audio/voices/4/single-3-0.ogg",
+          "text": "三！",
+          "duration": 0.452
+        }
+      ],
+      "pair-3": [
+        {
+          "file": "assets/audio/voices/4/pair-3-0.ogg",
+          "text": "对三！",
+          "duration": 0.989
+        }
+      ],
+      "single-4": [
+        {
+          "file": "assets/audio/voices/4/single-4-0.ogg",
+          "text": "四！",
+          "duration": 0.614
+        }
+      ],
+      "pair-4": [
+        {
+          "file": "assets/audio/voices/4/pair-4-0.ogg",
+          "text": "对四！",
+          "duration": 0.606
+        }
+      ],
+      "single-5": [
+        {
+          "file": "assets/audio/voices/4/single-5-0.ogg",
+          "text": "五！",
+          "duration": 0.58
+        }
+      ],
+      "pair-5": [
+        {
+          "file": "assets/audio/voices/4/pair-5-0.ogg",
+          "text": "对五！",
+          "duration": 0.992
+        }
+      ],
+      "single-6": [
+        {
+          "file": "assets/audio/voices/4/single-6-0.ogg",
+          "text": "六！",
+          "duration": 0.692
+        }
+      ],
+      "pair-6": [
+        {
+          "file": "assets/audio/voices/4/pair-6-0.ogg",
+          "text": "对六！",
+          "duration": 1.014
+        }
+      ],
+      "single-7": [
+        {
+          "file": "assets/audio/voices/4/single-7-0.ogg",
+          "text": "七！",
+          "duration": 0.609
+        }
+      ],
+      "pair-7": [
+        {
+          "file": "assets/audio/voices/4/pair-7-0.ogg",
+          "text": "对七！",
+          "duration": 0.604
+        }
+      ],
+      "single-8": [
+        {
+          "file": "assets/audio/voices/4/single-8-0.ogg",
+          "text": "八！",
+          "duration": 0.496
+        }
+      ],
+      "pair-8": [
+        {
+          "file": "assets/audio/voices/4/pair-8-0.ogg",
+          "text": "对八！",
+          "duration": 0.56
+        }
+      ],
+      "single-9": [
+        {
+          "file": "assets/audio/voices/4/single-9-0.ogg",
+          "text": "九！",
+          "duration": 0.621
+        }
+      ],
+      "pair-9": [
+        {
+          "file": "assets/audio/voices/4/pair-9-0.ogg",
+          "text": "对九！",
+          "duration": 0.643
+        }
+      ],
+      "single-10": [
+        {
+          "file": "assets/audio/voices/4/single-10-0.ogg",
+          "text": "十！",
+          "duration": 0.467
+        }
+      ],
+      "pair-10": [
+        {
+          "file": "assets/audio/voices/4/pair-10-0.ogg",
+          "text": "对十！",
+          "duration": 0.616
+        }
+      ],
+      "single-11": [
+        {
+          "file": "assets/audio/voices/4/single-11-0.ogg",
+          "text": "勾！",
+          "duration": 0.558
+        }
+      ],
+      "pair-11": [
+        {
+          "file": "assets/audio/voices/4/pair-11-0.ogg",
+          "text": "对勾！",
+          "duration": 0.917
+        }
+      ],
+      "single-12": [
+        {
+          "file": "assets/audio/voices/4/single-12-0.ogg",
+          "text": "圈！",
+          "duration": 0.445
+        }
+      ],
+      "pair-12": [
+        {
+          "file": "assets/audio/voices/4/pair-12-0.ogg",
+          "text": "对圈！",
+          "duration": 0.626
+        }
+      ],
+      "single-13": [
+        {
+          "file": "assets/audio/voices/4/single-13-0.ogg",
+          "text": "凯！",
+          "duration": 0.633
+        }
+      ],
+      "pair-13": [
+        {
+          "file": "assets/audio/voices/4/pair-13-0.ogg",
+          "text": "对凯！",
+          "duration": 0.651
+        }
+      ],
+      "single-14": [
+        {
+          "file": "assets/audio/voices/4/single-14-0.ogg",
+          "text": "尖！",
+          "duration": 0.609
+        }
+      ],
+      "pair-14": [
+        {
+          "file": "assets/audio/voices/4/pair-14-0.ogg",
+          "text": "对尖！",
+          "duration": 1.014
+        }
+      ],
+      "single-15": [
+        {
+          "file": "assets/audio/voices/4/single-15-0.ogg",
+          "text": "二！",
+          "duration": 0.41
+        }
+      ],
+      "pair-15": [
+        {
+          "file": "assets/audio/voices/4/pair-15-0.ogg",
+          "text": "对二！",
+          "duration": 0.554
+        }
+      ],
+      "single-16": [
+        {
+          "file": "assets/audio/voices/4/single-16-0.ogg",
+          "text": "小王！",
+          "duration": 0.674
+        }
+      ],
+      "single-17": [
+        {
+          "file": "assets/audio/voices/4/single-17-0.ogg",
+          "text": "大王！",
+          "duration": 0.989
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,135 @@
+name: Verify and release Windows plugin
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: doudizhu-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ !startsWith(github.ref, 'refs/tags/') }}
+
+jobs:
+  verify:
+    name: Test and package Windows x64
+    runs-on: windows-2022
+    timeout-minutes: 30
+    defaults:
+      run:
+        shell: pwsh
+    env:
+      CGO_ENABLED: '1'
+      DBX_PLUGIN_TARGET: windows-x64
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.34.7
+          run_install: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: pnpm
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.26.x'
+          cache-dependency-path: backend/go.sum
+      - name: Install locked dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Frontend unit tests
+        run: pnpm test
+      - name: Go race tests
+        run: go -C backend test -race ./...
+      - name: Go static analysis
+        run: go -C backend vet ./...
+      - name: Vendored DBX SDK checks
+        run: go -C backend/third_party/dbx-plugin-sdk test ./...
+      - name: Build unsigned candidate
+        run: pnpm run package
+      - name: Verify package and play three real process rounds
+        run: ./scripts/verify-package.ps1
+      - name: Export complete source archive
+        run: ./scripts/export-source.ps1
+      - name: Verify release identity, checksums and metadata
+        run: node scripts/release-metadata.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: doudizhu-windows-${{ github.sha }}
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 14
+          path: |
+            dist/*.dbxp
+            dist/*.artifact.json
+            dist/*.zip
+            dist/*.sha256
+            dist/release-candidates.json
+            dist/release-assets.json
+            dist/release-notes.md
+            dist/SHA256SUMS.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: doudizhu-verification-${{ github.sha }}
+          if-no-files-found: ignore
+          retention-days: 14
+          path: |
+            test-results/package-verification.json
+            test-results/stdio-integration.json
+
+  publish:
+    name: Publish verified tag assets
+    needs: verify
+    if: startsWith(github.ref, 'refs/tags/v') && github.event_name == 'push'
+    runs-on: windows-2022
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: doudizhu-windows-${{ github.sha }}
+          path: dist
+      - name: Publish immutable release assets
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $inventory = Get-Content -LiteralPath dist/release-assets.json -Encoding utf8 -Raw | ConvertFrom-Json
+          if ($inventory.repository -ne $env:GITHUB_REPOSITORY) { throw 'Release repository mismatch' }
+          if ($inventory.tag -ne $env:GITHUB_REF_NAME) { throw 'Release tag mismatch' }
+          foreach ($asset in $inventory.assets) {
+            if ($asset.name -notmatch '^[A-Za-z0-9_.-]+$') { throw 'Invalid asset filename' }
+            $assetPath = Join-Path 'dist' $asset.name
+            if ((Get-Item -LiteralPath $assetPath).Length -ne $asset.size) { throw "Asset size mismatch: $($asset.name)" }
+            if ((Get-FileHash -LiteralPath $assetPath -Algorithm SHA256).Hash.ToLowerInvariant() -ne $asset.sha256) { throw "Asset checksum mismatch: $($asset.name)" }
+          }
+          $releaseJSON = & gh release view $inventory.tag --repo $env:GITHUB_REPOSITORY --json isDraft,assets 2>$null
+          if ($LASTEXITCODE -eq 0) {
+            $release = $releaseJSON | ConvertFrom-Json
+          } else {
+            & gh release create $inventory.tag --repo $env:GITHUB_REPOSITORY --verify-tag --draft --title "田园斗地主 $($inventory.version)" --notes-file dist/release-notes.md
+            if ($LASTEXITCODE -ne 0) { throw 'Could not create draft release' }
+            $release = [pscustomobject]@{ isDraft = $true; assets = @() }
+          }
+          $checkDirectory = Join-Path $env:RUNNER_TEMP 'existing-release-assets'
+          [IO.Directory]::CreateDirectory($checkDirectory) | Out-Null
+          foreach ($asset in $inventory.assets) {
+            if (@($release.assets | Where-Object name -EQ $asset.name).Count -gt 0) {
+              & gh release download $inventory.tag --repo $env:GITHUB_REPOSITORY --pattern $asset.name --dir $checkDirectory
+              if ($LASTEXITCODE -ne 0) { throw "Cannot verify existing release asset: $($asset.name)" }
+              $existingHash = (Get-FileHash -LiteralPath (Join-Path $checkDirectory $asset.name) -Algorithm SHA256).Hash.ToLowerInvariant()
+              if ($existingHash -ne $asset.sha256) { throw "Refusing to replace published bytes: $($asset.name). Publish a new version instead." }
+            } else {
+              & gh release upload $inventory.tag (Join-Path 'dist' $asset.name) --repo $env:GITHUB_REPOSITORY
+              if ($LASTEXITCODE -ne 0) { throw "Could not upload release asset: $($asset.name)" }
+            }
+          }
+          & gh release edit $inventory.tag --repo $env:GITHUB_REPOSITORY --draft=false --latest
+          if ($LASTEXITCODE -ne 0) { throw 'Could not publish verified release' }

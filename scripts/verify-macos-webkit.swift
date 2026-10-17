@@ -157,11 +157,16 @@ do {
     }
     let payloadData = try JSONSerialization.data(withJSONObject: inputs, options: [.sortedKeys])
     let payload = String(decoding: payloadData, as: UTF8.self).replacingOccurrences(of: "</", with: "<\\/")
-    let application = NSApplication.shared
-    application.setActivationPolicy(.prohibited)
-    let verifier = WebKitVerifier()
-    verifier.start(payload: payload)
-    withExtendedLifetime(verifier) { application.run() }
+    // Swift scripts start on the main thread, but top-level synchronous code is not
+    // implicitly MainActor-isolated in the runner's Swift language mode.
+    precondition(Thread.isMainThread)
+    MainActor.assumeIsolated {
+        let application = NSApplication.shared
+        application.setActivationPolicy(.prohibited)
+        let verifier = WebKitVerifier()
+        verifier.start(payload: payload)
+        withExtendedLifetime(verifier) { application.run() }
+    }
     emitJSON(["ok": false, "error": "Application loop exited before verification completed"])
     Darwin.exit(EXIT_FAILURE)
 } catch {

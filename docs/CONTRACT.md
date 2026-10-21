@@ -1,6 +1,6 @@
 # Shared implementation contract
 
-Public plugin identity: `io.dbx.doudizhu`, version `0.1.0`, publisher `ezreal-byte`, display name `田园斗地主`. LAN protocol 2 supports five characters. All players should use the same public release. Earlier `local.doudizhu` versions were local development builds with a separate plugin identity and data directory.
+Public plugin identity: `io.dbx.doudizhu`, version `0.1.1`, publisher `ezreal-byte`, display name `田园斗地主`. LAN protocol 2 supports five characters. All players should use the same public release. Earlier `local.doudizhu` versions were local development builds with a separate plugin identity and data directory.
 Module: `dbx-doudizhu-plugin/backend`. Card ids 0..51: rank = floor(id/4)+3 (3..15 where15=2); suits = id%4 (spade,heart,club,diamond); 52=small joker,53=big joker.
 
 DBX invoke methods (no method prefix wrapper):

@@ -1,17 +1,17 @@
 {
   "name": "Garden Dou Dizhu",
-  "description": "A three-player Dou Dizhu mini-game for your local LAN, with public/password rooms and animated characters. No hosted online service, online accounts, top-ups, payments or cash-out.",
-  "icon": "https://raw.githubusercontent.com/Ezreal-byte/dbx-doudizhu-plugin/v0.1.0/assets/plugin.svg",
+  "description": "A three-player Dou Dizhu mini-game for your local LAN, with public/password rooms and animated characters.",
+  "icon": "https://raw.githubusercontent.com/Ezreal-byte/dbx-doudizhu-plugin/v0.1.1/assets/plugin.svg",
   "tags": ["game", "lan", "doudizhu", "offline"],
   "permissions": ["host.events"],
-  "source": "https://github.com/Ezreal-byte/dbx-doudizhu-plugin/tree/v0.1.0",
+  "source": "https://github.com/Ezreal-byte/dbx-doudizhu-plugin/tree/v0.1.1",
   "homepage": "https://github.com/Ezreal-byte/dbx-doudizhu-plugin",
   "license": "Apache-2.0",
-  "releaseNotes": "Initial public release: local LAN three-player rooms, optional passwords, animated characters, offline voices and social effects. Includes no hosted Internet lobby, matchmaking, online account service, top-ups, payments, purchases, cash-out or real-money stakes. Room beans are non-transferable score counters without monetary value. Windows x64 and macOS 15.4+ Apple Silicon/Intel unsigned review candidates; DBX Store signs approved packages.",
+  "releaseNotes": "更新商店中英文简介，使功能描述更简洁清晰。游戏功能、权限和 LAN 协议保持不变；提供 Windows x64 与 macOS 15.4+（Apple Silicon / Intel）安装包。",
   "localizations": {
     "zh-CN": {
       "name": "田园斗地主",
-      "description": "本地局域网三人联机斗地主小游戏，支持公开房、密码房和动态角色互动；无公网在线服务、账号、充值、支付或提现。"
+      "description": "本地局域网三人联机斗地主小游戏，支持公开房、密码房和动态角色互动。"
     }
   }
 }

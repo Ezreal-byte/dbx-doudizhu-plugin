@@ -55,7 +55,7 @@ func main() {
 	}
 	h.application = application
 	defer application.Close()
-	server := dbx.NewServer(dbx.Metadata{ID: "io.dbx.doudizhu", Version: "0.1.0", Capabilities: []string{"events", "lan-game"}}, h)
+	server := dbx.NewServer(dbx.Metadata{ID: "io.dbx.doudizhu", Version: "0.1.1", Capabilities: []string{"events", "lan-game"}}, h)
 	if err = server.Serve(); err != nil {
 		log.Printf("DBX bridge stopped: %v", err)
 	}
